@@ -6,8 +6,8 @@ import Footer from "./components/footer/Footer";
 import Todos from "./components/Todos";
 import AddToDo from "./components/AddToDo";
 
+
 function App() {
-  
   let initTodo;
   if (localStorage.getItem("todos") === null) {
     initTodo = [];
@@ -18,7 +18,7 @@ function App() {
   const addTodo = (title, description) => {
     console.log("More To Do's Added", title, description);
     let id;
-    if (todos.length == 0) {
+    if (todos.length === 0) {
       id = 1;
     } else {
       id = todos[todos.length - 1].id + 1;
@@ -42,13 +42,12 @@ function App() {
     );
     localStorage.getItem("todos");
   };
-  
+
   const [todos, setTodos] = useState(initTodo);
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
- 
   return (
     <>
       <NavScrollExample title="My Todos App" searchBar="false" />

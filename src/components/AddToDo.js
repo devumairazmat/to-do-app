@@ -17,7 +17,6 @@ function AddToDo(props) {
             setTitle("");
             setDescription("");
         }
-        
     }
   return (
    <Container>

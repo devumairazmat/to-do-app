@@ -4,12 +4,13 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import propTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 function NavScrollExample(props) {
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">{props.title}</Navbar.Brand>
+      <Link to="/"> {props.title}</Link>  
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -17,11 +18,16 @@ function NavScrollExample(props) {
             style={{ maxHeight: '200px' }}
             navbarScroll
           >
-            <Nav.Link href="#home" active>Home</Nav.Link>
-            <Nav.Link href="#about">About Us</Nav.Link>
-            <Nav.Link href="#contact" >
-             Contact Us
-            </Nav.Link>
+            <nav>
+            <ul className="d-flex gap-4 my-2 " style={{listStyle: 'none'}} >
+              <li> <Link to="/" >Home</Link></li>
+              <li> <Link to="/about" >About Us</Link></li>
+            </ul>
+            </nav>
+           
+            
+            
+
           </Nav>
         {
           props.searcBar?   <Form className="d-flex">
